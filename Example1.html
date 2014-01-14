@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>artEngine Example #1</title>
+<script src="artEngine.js"></script>
+</head>
+<body>
+  <h1>artEngine Example #1</h1>
+  <h2>A Circle:</h2>
+  <canvas id="artCanvas">
+    Uh oh! Please update your brewer to a newer version! Your current browser version does not support HTML5 canvas!
+  </canvas>
+  <style>
+    h1 {
+      color: red;
+      font-family: Helvetica;
+    }
+    h2 {
+      color: blue;
+      font-family: Helvetica;
+    }
+    canvas {
+      width: 400px;
+      height: 400px;
+      background-color: green;
+      border: 5px solid yellow;
+      border-radius: 10px;
+    }
+  </style>
+  <script>
+    var myCircle = new aCircle(10, 'yellow', 200, 200);
+    function draw() {
+      myCircle.draw();
+    }
+    draw();
+  </script>
+</body>
+</html>
