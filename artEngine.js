@@ -11,9 +11,6 @@
 var canvas = document.getElementById('artCanvas');
 var ctx = canvas.getContext('2d');
 
-var canvas = document.getElementById('gameCanvas');
-var ctx = canvas.getContext('2d');
-
 function Sprite(Isrc, height, width, xCoordinate, yCoordinate) {
     this.image = new Image();
     this.image.src = Isrc;
@@ -60,7 +57,7 @@ function aCircle(radius, color, xCoordinate, yCoordinate) {
         ctx.fillStyle = this.color;
         ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
         ctx.fill();
-    }
+    };
 }
 
 /*
