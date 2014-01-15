@@ -8,7 +8,7 @@
 <body>
   <h1>artEngine Example #1</h1>
   <h2>A Circle:</h2>
-  <canvas id="artCanvas">
+  <canvas id="artCanvas" width='400' height='400'>
     Uh oh! Please update your brewer to a newer version! Your current browser version does not support HTML5 canvas!
   </canvas>
   <style>
@@ -21,19 +21,10 @@
       font-family: Helvetica;
     }
     canvas {
-      width: 400px;
-      height: 400px;
       background-color: green;
       border: 5px solid yellow;
       border-radius: 10px;
     }
   </style>
-  <script>
-    var myCircle = new aCircle(10, 'yellow', 200, 200);
-    function draw() {
-      myCircle.draw();
-    }
-    draw();
-  </script>
 </body>
 </html>
