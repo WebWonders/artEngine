@@ -1,0 +1,43 @@
+*** Welcome to artEngine ***
+
+Description: A JavaScript library for creating graphics with the HTML5 canvas
+
+****
+
+Acknowledgements: Courtesy of WebWonders Created on Komodo Edit and GitHub
+
+****
+
+Regarding Functionality:
+1) Create a element in the HTML document with an id of artCanvas for the library to work
+2) There are basic instructions on implementation of the library at the end of the code as well as a short note at the beginning about the library itself
+3) This library is meant to be a basic coding library to be used by amateur programmers and designers who want a free and simple way to create graphics using basic shapes
+4) This library CAN be used to help make games (only as far as creating simple graphics) but it is extremely limited in that area as it was created for graphic design and not game dev
+
+****
+
+HOW TO USE THIS ENGINE:
+
+The first thing to do when beginning drawing, is to create a <canvas> tag in your HTML file with the id 'artCanvas' like this:
+    <canvas id="artCanvas"></canvas>
+If you skip this step, artEngine will not work on your page
+
+The basic syntax for creating an image on the canvas is:
+    var myCoolImage = new thing(parameters);
+Replace 'myCoolImage' with the name of your variable. Replace 'thing' with the type of shape you want (see list of supported operations). Replace 'parameters' with the parameters that you would like (these must correspond to the names of the parameters in the list of supported operations).
+
+To make the image you created previously appear on the canvas, use this:
+    function draw() {
+      thing.draw();
+    }
+    draw();
+Replace 'thing' with the name of your variable you created earlier. If you have more than one object, simply add another line beneath the first and write your second object's name (like this: object2.draw()).
+
+For more information on how to properly implement artEngine, please see the examples on GitHub.
+
+****
+
+LIST OF SUPPORTED OPERATIONS:
+Sprite(image_source_url, height_of_shape, width_of_shape, x_coordinate, y_coordinate); - adds an image
+aRectangle(width_of_shape, height_of_shape, color_of_shape, x_coordinate, y_coordinate); - adds a rectangle or square
+aCircle(radius_of_shape, color_of_shape, x_coordinate, y_coordinate); - adds a circle
