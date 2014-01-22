@@ -60,15 +60,40 @@ function aCircle(radius, color, xCoordinate, yCoordinate) {
     };
 }
 
-/*
- * What code is needed for use with this engine:
- * function draw() {
- *   myStuff.draw();
- *   myOtherStuff.draw();
- *   myLastStuff.draw();
- * }
- * draw();
- *
- * Replace the myStuff, myOtherStuff, and myLastStuff objects with actual objects
- * Write the draw() function after creating your objects
- */
+function aEllipse(xCoordinate, yCoordinate, width, height) {
+    var kappa = 0.5522848;
+    this.ox = (width / 2) * kappa;
+    this.oy = (height / 2) * kappa;
+    this.xe = xCoordinate + width;   
+    this.ye = yCoordinate + height; 
+    this.xm = xCoordinate + width / 2;
+    this.ym = yCoordinate + height / 2;
+   
+    ctx.beginPath();
+    ctx.moveTo(xCoordinate, ym);
+    ctx.bezierCurveTo(xCoordinate, ym - oy, xm - ox, yCoordinate, xm, yCoordinate);
+    ctx.bezierCurveTo(xm + ox, yCoordinate, xe, ym - oy, xe, ym);
+    ctx.bezierCurveTo(xe, ym + oy, xm + ox, ye, xm, ye);
+    ctx.bezierCurveTo(xm - ox, ye, xCoordinate, ym + oy, xCoordinate, ym);
+    ctx.closePath();
+    ctx.stroke();
+}
+    
+function aTriangle(x1, y1, x2, y2, x3, y3, color) {   
+    this.color = color;
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.lineTo(x3, y3);
+    ctx.closePath();
+    ctx.fillStyle = this.color;
+    ctx.stroke();
+    this.draw = function() {
+       ctx.moveTo(x1, y1);
+       ctx.lineTo(x2, y2);
+       ctx.lineTo(x3, y3);
+       ctx.closePath();
+       ctx.fillStyle = this.color;
+       ctx.stroke();
+    };
+}
