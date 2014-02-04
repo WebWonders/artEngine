@@ -11,7 +11,7 @@
 var canvas = document.getElementById('artCanvas');
 var ctx = canvas.getContext('2d');
 
-function Sprite(Isrc, height, width, xCoordinate, yCoordinate) {
+function Image(Isrc, height, width, xCoordinate, yCoordinate) {
     this.image = new Image();
     this.image.src = Isrc;
     this.width = width;
@@ -33,7 +33,7 @@ function Sprite(Isrc, height, width, xCoordinate, yCoordinate) {
   };
 }
 
-function aRectangle(width, height, color, xCoordinate, yCoordinate) {
+function Rectangle(width, height, color, xCoordinate, yCoordinate) {
     this.width = width;
     this.height = height;
     this.x = xCoordinate;
@@ -47,7 +47,7 @@ function aRectangle(width, height, color, xCoordinate, yCoordinate) {
     };
 }
 
-function aCircle(radius, color, xCoordinate, yCoordinate) {
+function Circle(radius, color, xCoordinate, yCoordinate) {
     this.radius = radius;
     this.x = xCoordinate;
     this.y = yCoordinate;
@@ -60,7 +60,7 @@ function aCircle(radius, color, xCoordinate, yCoordinate) {
     };
 }
 
-function aEllipse(xCoordinate, yCoordinate, width, height) {
+function Ellipse(xCoordinate, yCoordinate, width, height) {
     var kappa = 0.5522848;
     this.ox = (width / 2) * kappa;
     this.oy = (height / 2) * kappa;
@@ -79,7 +79,7 @@ function aEllipse(xCoordinate, yCoordinate, width, height) {
     ctx.stroke();
 }
     
-function aTriangle(x1, y1, x2, y2, x3, y3, color) {   
+function Triangle(x1, y1, x2, y2, x3, y3, color) {   
     this.color = color;
     ctx.beginPath();
     ctx.moveTo(x1, y1);
