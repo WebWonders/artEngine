@@ -11,6 +11,11 @@ function DrawingBoard() {
     this.canvas.style.backgroundColor = "yellow";
     document.body.appendChild(this.canvas);
     this.ctx = this.canvas.getContext("2d");
+    
+    this.setSize = function(width, height) {
+        this.canvas.height = height;
+        this.canvas.width = width;
+    }
 }
 
 function Sprite(Isrc, height, width, xCoordinate, yCoordinate) {
