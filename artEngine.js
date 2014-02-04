@@ -5,11 +5,13 @@
  *
  * Engine requires a brower supporting HTML5 and the HTML5 <canvas> element
  *
- * IMPORTANT NOTE: for artEngine to run properly, create a <canvas> element with the id artCanvas
  */
-
-var canvas = document.getElementById('artCanvas');
-var ctx = canvas.getContext('2d');
+function DrawingBoard() {
+    this.canvas = document.createElement("canvas");
+    this.canvas.style.backgroundColor = "yellow";
+    document.body.appendChild(this.canvas);
+    this.ctx = this.canvas.getContext("2d");
+}
 
 function Sprite(Isrc, height, width, xCoordinate, yCoordinate) {
     this.image = new Image();
