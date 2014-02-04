@@ -16,6 +16,10 @@ function DrawingBoard() {
         this.canvas.height = height;
         this.canvas.width = width;
     }
+    
+    this.setColor = function(color) {
+        this.canvas.style.backgroundColor = color;
+    }
 }
 
 function Sprite(Isrc, height, width, xCoordinate, yCoordinate) {
