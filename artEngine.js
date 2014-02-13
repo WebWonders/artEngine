@@ -22,7 +22,7 @@ function DrawingBoard() {
     }
 }
 
-function Sprite(Isrc, height, width, xCoordinate, yCoordinate) {
+function Image(Isrc, height, width, xCoordinate, yCoordinate) {
     this.image = new Image();
     this.image.src = Isrc;
     this.width = width;
@@ -44,7 +44,7 @@ function Sprite(Isrc, height, width, xCoordinate, yCoordinate) {
   };
 }
 
-function aRectangle(board, width, height, color, xCoordinate, yCoordinate) {
+function Rectangle(board, width, height, color, xCoordinate, yCoordinate) {
     this.canvas = board;
     this.ctx = canvas.getContext('2d');
     this.width = width;
@@ -60,7 +60,7 @@ function aRectangle(board, width, height, color, xCoordinate, yCoordinate) {
     };
 }
 
-function aCircle(board, radius, color, xCoordinate, yCoordinate) {
+function Circle(board, radius, color, xCoordinate, yCoordinate) {
     this.canvas = board;
     this.ctx = canvas.getContext('2d');
     this.radius = radius;
@@ -75,7 +75,7 @@ function aCircle(board, radius, color, xCoordinate, yCoordinate) {
     };
 }
 
-function aEllipse(board, xCoordinate, yCoordinate, width, height) {
+function Ellipse(board, xCoordinate, yCoordinate, width, height) {
     this.canvas = board;
     this.ctx = canvas.getContext('2d');
     var kappa = 0.5522848;
@@ -96,7 +96,7 @@ function aEllipse(board, xCoordinate, yCoordinate, width, height) {
     ctx.stroke();
 }
     
-function aTriangle(board, x1, y1, x2, y2, x3, y3, color) {   
+function Triangle(board, x1, y1, x2, y2, x3, y3, color) {   
     this.canvas = board;
     this.ctx = canvas.getContext('2d');
     this.color = color;
