@@ -5,11 +5,22 @@
  *
  * Engine requires a brower supporting HTML5 and the HTML5 <canvas> element
  *
- * IMPORTANT NOTE: for artEngine to run properly, create a <canvas> element with the id artCanvas
  */
-
-var canvas = document.getElementById('artCanvas');
-var ctx = canvas.getContext('2d');
+function DrawingBoard() {
+    this.canvas = document.createElement("canvas");
+    this.canvas.style.backgroundColor = "yellow";
+    document.body.appendChild(this.canvas);
+    this.ctx = this.canvas.getContext("2d");
+    
+    this.setSize = function(width, height) {
+        this.canvas.height = height;
+        this.canvas.width = width;
+    }
+    
+    this.setColor = function(color) {
+        this.canvas.style.backgroundColor = color;
+    }
+}
 
 function Image(Isrc, height, width, xCoordinate, yCoordinate) {
     this.image = new Image();
@@ -33,7 +44,9 @@ function Image(Isrc, height, width, xCoordinate, yCoordinate) {
   };
 }
 
-function Rectangle(width, height, color, xCoordinate, yCoordinate) {
+function Rectangle(board, width, height, color, xCoordinate, yCoordinate) {
+    this.canvas = board;
+    this.ctx = canvas.getContext('2d');
     this.width = width;
     this.height = height;
     this.x = xCoordinate;
@@ -47,7 +60,9 @@ function Rectangle(width, height, color, xCoordinate, yCoordinate) {
     };
 }
 
-function Circle(radius, color, xCoordinate, yCoordinate) {
+function Circle(board, radius, color, xCoordinate, yCoordinate) {
+    this.canvas = board;
+    this.ctx = canvas.getContext('2d');
     this.radius = radius;
     this.x = xCoordinate;
     this.y = yCoordinate;
@@ -60,7 +75,9 @@ function Circle(radius, color, xCoordinate, yCoordinate) {
     };
 }
 
-function Ellipse(xCoordinate, yCoordinate, width, height) {
+function Ellipse(board, xCoordinate, yCoordinate, width, height) {
+    this.canvas = board;
+    this.ctx = canvas.getContext('2d');
     var kappa = 0.5522848;
     this.ox = (width / 2) * kappa;
     this.oy = (height / 2) * kappa;
@@ -79,7 +96,9 @@ function Ellipse(xCoordinate, yCoordinate, width, height) {
     ctx.stroke();
 }
     
-function Triangle(x1, y1, x2, y2, x3, y3, color) {   
+function Triangle(board, x1, y1, x2, y2, x3, y3, color) {   
+    this.canvas = board;
+    this.ctx = canvas.getContext('2d');
     this.color = color;
     ctx.beginPath();
     ctx.moveTo(x1, y1);
